@@ -54,7 +54,7 @@ namespace ExerciseOne
             if (Visa.Checked) discount = 0.95;
             if (MasterCard.Checked) discount = 0.97;
 
-            result = products[product].Price * (double)Copies.Value * discount;
+            result = Math.Round(products[product].Price * (double)Copies.Value * discount, 2);
             Sum.Text = $"Сумма: {result}";
             isCalculated = true;
         }
@@ -73,7 +73,7 @@ namespace ExerciseOne
                 return;
             }
 
-            Change.Text = $"Сдача: {(double)Deposited.Value - result}";
+            Change.Text = $"Сдача: {Math.Round((double)Deposited.Value - result, 2)}";
         }
 
         struct Product
